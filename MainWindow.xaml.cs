@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,54 @@ namespace ShutdownTimer
         public MainWindow()
         {
             InitializeComponent();
+            
         }
+
+
+
+
+
+
+
+
+        private void ShutdownIn(int seconds)
+        {
+
+           Process cmd = new Process();
+           cmd.StartInfo.FileName = "cmd.exe";
+           cmd.StartInfo.RedirectStandardInput = true;
+           cmd.StartInfo.RedirectStandardOutput = true;
+           cmd.StartInfo.CreateNoWindow = true;
+           cmd.StartInfo.UseShellExecute = false;
+           cmd.Start();
+
+           cmd.StandardInput.WriteLine("shutdown -s -t "+ seconds);
+           cmd.StandardInput.Flush();
+           cmd.StandardInput.Close();
+           cmd.WaitForExit();
+           Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+        
+        }
+
+        private void CancelShutdown()
+        {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine("shutdown -a");
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+        }
+
+
+
+
     }
 }
