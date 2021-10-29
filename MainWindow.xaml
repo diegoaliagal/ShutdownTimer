@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShutdownTimer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="300" Width="450" ResizeMode="NoResize">
     <Grid>
-        
+        <Button x:Name="btn_lockdown" Content="Lockdown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="341,10,0,0" Click="btn_lockdown_Click"/>
+        <Button x:Name="btn_cancelSD" Content="Cancel Shutdown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="310,227,0,0" Click="btn_cancelSD_Click"/>
+        <Button x:Name="btn_shutdown1h" Content="Shutdown in 1h" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="10,15,0,0" Click="btn_shutdown1h_Click"/>
+        <TextBox x:Name="tbx_hours" PreviewTextInput="NumberValidationTextBox" MaxLength="5" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Margin="101,227,0,0" RenderTransformOrigin="0.863,-0.026" ToolTip="hours" TextChanged="tbx_hours_TextChanged" Text="0"/>
+        <TextBox x:Name="tbx_minutes" PreviewTextInput="NumberValidationTextBox" MaxLength="2" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Margin="148,227,0,0" RenderTransformOrigin="0.863,-0.026" ToolTip="minutes" TextChanged="tbx_minutes_TextChanged" Text="30"/>
+        <TextBox x:Name="tbx_seconds" PreviewTextInput="NumberValidationTextBox" MaxLength="2" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Margin="173,227,0,0" RenderTransformOrigin="0.863,-0.026" ToolTip="seconds" TextChanged="tbx_seconds_TextChanged" Text="0"/>
+        <Button x:Name="btn_shutdowncustom" Content="Shutdown in" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Margin="10,227,0,0" Click="Button_Click"/>
+
     </Grid>
 </Window>
