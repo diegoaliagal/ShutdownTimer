@@ -5,15 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShutdownTimer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="450" ResizeMode="NoResize">
+        Title="ShutdownTimer" Height="235" Width="295" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="btn_lockdown" Content="Lockdown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="341,10,0,0" Click="btn_lockdown_Click"/>
-        <Button x:Name="btn_cancelSD" Content="Cancel Shutdown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="310,227,0,0" Click="btn_cancelSD_Click"/>
-        <Button x:Name="btn_shutdown1h" Content="Shutdown in 1h" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="10,15,0,0" Click="btn_shutdown1h_Click"/>
-        <TextBox x:Name="tbx_hours" PreviewTextInput="NumberValidationTextBox" MaxLength="5" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Margin="101,227,0,0" RenderTransformOrigin="0.863,-0.026" ToolTip="hours" TextChanged="tbx_hours_TextChanged" Text="0"/>
-        <TextBox x:Name="tbx_minutes" PreviewTextInput="NumberValidationTextBox" MaxLength="2" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Margin="148,227,0,0" RenderTransformOrigin="0.863,-0.026" ToolTip="minutes" TextChanged="tbx_minutes_TextChanged" Text="30"/>
-        <TextBox x:Name="tbx_seconds" PreviewTextInput="NumberValidationTextBox" MaxLength="2" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Margin="173,227,0,0" RenderTransformOrigin="0.863,-0.026" ToolTip="seconds" TextChanged="tbx_seconds_TextChanged" Text="0"/>
-        <Button x:Name="btn_shutdowncustom" Content="Shutdown in" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Margin="10,227,0,0" Click="Button_Click"/>
+        <Button x:Name="btn_lockdown" Content="Lockdown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="195,135,0,0" Click="btn_lockdown_Click" Background="#FFD6F6F7"/>
+        <Button x:Name="btn_cancelSD" Content="Cancel Shutdown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="164,165,0,0" Click="btn_cancelSD_Click" Background="#FFFFD3D3"/>
+        <Button x:Name="btn_shutdown1h" Content="Shutdown in 1h" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="10,60,0,0" Click="btn_shutdown1h_Click"/>
+        <Border Margin="10,211,250.2,24.4"/>
+        <TextBox x:Name="tbx_hours" PreviewTextInput="NumberValidationTextBox" MaxLength="5" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" RenderTransformOrigin="0.863,-0.026" ToolTip="hours" TextChanged="tbx_hours_TextChanged" Text="0" Margin="117,26,0,0"/>
+        <TextBox x:Name="tbx_minutes" PreviewTextInput="NumberValidationTextBox" MaxLength="2" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.863,-0.026" ToolTip="minutes" TextChanged="tbx_minutes_TextChanged" Text="30" Margin="164,26,0,0"/>
+        <TextBox x:Name="tbx_seconds" PreviewTextInput="NumberValidationTextBox" MaxLength="2" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.863,-0.026" ToolTip="seconds" TextChanged="tbx_seconds_TextChanged" Text="0" Margin="189,26,0,0"/>
+        <Button x:Name="btn_shutdowncustom" Content="Shutdown in..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Click="Button_Click" IsCancel="True" Margin="10,26,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="h&#x9;m     s" VerticalAlignment="Top" Margin="117,10,0,0" Width="92"/>
+        <Button x:Name="btn_shutdown2h" Content="Shutdown in 2h" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="10,95,0,0" Click="btn_shutdown2h_Click"/>
+        <Button x:Name="btn_shutdown5h" Content="Shutdown in 5h" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="10,130,0,0" Click="Shutdown_in_5h_Click"/>
+        <Button x:Name="btn_shutdown12h" Content="Shutdown in 12h" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="10,165,0,0" Click="btn_shutdown12h_Click"/>
 
     </Grid>
 </Window>
