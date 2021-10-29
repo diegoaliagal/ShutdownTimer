@@ -91,7 +91,6 @@ namespace ShutdownTimer
 
         private void ShutdownIn(int seconds)
         {
-
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;
@@ -105,6 +104,22 @@ namespace ShutdownTimer
             cmd.StandardInput.Close();
             cmd.WaitForExit();
             Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+
+            if (seconds > 3600)
+            {
+                if (seconds % 3600 != 0) {
+                    MessageBox.Show(this, "A shutdown will ocurr in " + seconds / 3600 + " hours and "+ ((seconds-((seconds/3600)*3600))/60)+" minutes" , "Shutdown Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else { 
+                MessageBox.Show(this, "A shutdown will ocurr in " + seconds/3600 + " hours", "Shutdown Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else if (seconds > 60)
+            {  
+                MessageBox.Show(this, "A shutdown will ocurr in " + seconds/60 + " minutes", "Shutdown Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            // windows takes care of <60
+            
 
         }
 
@@ -123,6 +138,8 @@ namespace ShutdownTimer
             cmd.StandardInput.Close();
             cmd.WaitForExit();
             Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+
+            MessageBox.Show(this, "Shutdown Canceled", "Shutdown Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Lockdown()
