@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("ShutdownTimer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("GrouchCreatures")]
 [assembly: AssemblyProduct("ShutdownTimer")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]

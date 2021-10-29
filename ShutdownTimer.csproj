@@ -52,6 +52,7 @@
   <PropertyGroup>
     <ApplicationIcon>clock.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
